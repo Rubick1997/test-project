@@ -1,9 +1,14 @@
 const { generateText } = require("./util");
 
-//unit test
+//unit tests
 test("should output name and age", () => {
 	const text = generateText("Rustam", 23);
-    expect(text).toBe("Rustam (23 years old)");
+	expect(text).toBe("Rustam (23 years old)");
+	const text2 = generateText("Ana", 29);
+	expect(text2).toBe("Ana (29 years old)");
 });
 
-test
+test("should output data-less text", () => {
+	const text = generateText("", null);
+	expect(text).toBe(" (null years old)");
+});
